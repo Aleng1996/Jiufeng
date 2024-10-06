@@ -1,0 +1,106 @@
+body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f8f6f0;
+    }
+.header {
+    background-color: transparent; /* 修改為透明 */
+    padding: 20px;
+    text-align: left;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .logo {
+    height: 100%;
+    margin-right: 20px;
+    float: left; /* 加入左浮動 */
+  }
+  
+  .logo img {
+    height: 100%;
+  }
+
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end; /* 修改為右對齊 */
+    align-items: center;
+  }
+  
+  .menu li {
+    margin-right: 20px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s ease;
+    font-size: 24px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 30px;
+  }
+  
+  .menu li:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+  }
+
+  .menu li:hover a{
+    color: #666;
+  }
+  
+  .banner {
+    width: 100%;
+    height: 300px;
+    background-color: #f8f6f0;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* 加入相對定位 */
+  }
+  
+  .slick-slider {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slick-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .slick-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .slick-prev {
+    position: absolute;
+    left: 0; /* 左邊距離 */
+    z-index: 1; /* 層級提高到最上層 */
+    transform: translateY(-50%); /* 水平置中 */
+    top: 50%; /* 頂部距離 */
+  }
+  
+  .slick-next {
+    position: absolute;
+    right: 0; /* 右邊距離 */
+    z-index: 1; /* 層級提高到最上層 */
+    transform: translateY(-50%); /* 水平置中 */
+    top: 50%; /* 頂部距離 */
+  }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web 2024/09/08</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+    <header id="header"></header>
+    <div class="banner">
+        <div class="slick-slider">
+            <div class="slick-slide">
+                <h2>1banner</h2>
+            </div>
+            <div class="slick-slide">
+                <h2>2banner</h2>
+            </div>
+            <div class="slick-slide">
+                <h2>3banner</h2>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            // 使用 document.getElementById 方法動態創建 <header> 元素
+                const headerElement = document.getElementById('header');
+            // 使用 fetch 方法讀取 header.html 檔案的內容
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    // 將 header.html 檔案的內容插入到 <header> 元素中
+                    headerElement.innerHTML = data;
+                })
+                .catch(error => console.error(error));
+            $('.slick-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: true,
+                prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+            });
+        });
+    </script>
+</body>
+</html>
