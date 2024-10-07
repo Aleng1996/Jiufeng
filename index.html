@@ -13,7 +13,7 @@
 <body>
     <header id="header"></header>
     <div class="banner">
-        <div class="slick-slider">
+        <div class="banner_slick slick-slider">
             <div class="slick-slide">
                 <img src="banner1.jpeg" alt="Banner 1">
             </div>
@@ -25,30 +25,61 @@
             </div>
         </div>
     </div>
+    <div class="product">
+        <div class="product_slick slick-slider">
+            <div class="slick-slide">
+                <p>1</p>
+            </div>
+            <div class="slick-slide">
+                <p>2</p>
+            </div>
+            <div class="slick-slide">
+                <p>3</p>
+            </div>
+            <div class="slick-slide">
+                <p>4</p>
+            </div>  
+            <div class="slick-slide">
+                <p>5</p>
+            </div>  
+            <div class="slick-slide">
+                <p>6</p>
+            </div>             
+        </div>
+    </div>
     
-    <script>
-        $(document).ready(function() {
-            // 使用 document.getElementById 方法動態創建 <header> 元素
-                const headerElement = document.getElementById('header');
-            // 使用 fetch 方法讀取 header.html 檔案的內容
-            fetch('header.html')
-                .then(response => response.text())
-                .then(data => {
-                    // 將 header.html 檔案的內容插入到 <header> 元素中
-                    headerElement.innerHTML = data;
-                })
-                .catch(error => console.error(error));
-            $('.slick-slider').slick({
-                fade:true,
-                infinite: true,
-                speed: 1500,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 5000,
-                arrows: false,                
-            });
-        });
-    </script>
 </body>
+<script>
+    $(document).ready(function() {
+        // 使用 document.getElementById 方法動態創建 <header> 元素
+            const headerElement = document.getElementById('header');
+        // 使用 fetch 方法讀取 header.html 檔案的內容
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                // 將 header.html 檔案的內容插入到 <header> 元素中
+                headerElement.innerHTML = data;
+            })
+            .catch(error => console.error(error));
+            var bannerSlick = $('.banner_slick').slick({
+    fade: true,
+    infinite: true,
+    speed: 1500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+  });
+  var productSlick = $('.product_slick').slick({
+    infinite: true,
+    speed: 1500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: false,
+  });
+    });
+</script>
 </html>
