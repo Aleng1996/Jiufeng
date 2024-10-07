@@ -1,6 +1,6 @@
 .header {
 	background-color: transparent;
-	padding: 20px;
+	padding:10px 20px 0 20px;
 	text-align: left;
 	height: 15vh;
 	display: flex;
@@ -39,7 +39,9 @@
 .menu li:hover {
 	transform: scale(1.2);
 	transition: transform 0.2s ease;
+    
 }
 .menu li:hover a {
-	color: #666;
+	color: #fff;
+    background-color: rgb(208, 155, 45);
 }
