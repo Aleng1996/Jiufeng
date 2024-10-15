@@ -12,38 +12,38 @@
 </head>
 <body>
     <header id="header"></header>
-    <div class="banner">
+    <div id="banner">
         <div class="banner_slick slick-slider">
             <div class="slick-slide">
-                <img src="banner1.jpeg" alt="Banner 1">
+                <img src="banner1.jpg" alt="Banner 1">
             </div>
             <div class="slick-slide">
-                <img src="banner2.jpeg" alt="Banner 1">
+                <img src="banner2.jpg" alt="Banner 2">
             </div>
             <div class="slick-slide">
-                <img src="banner3.jpeg" alt="Banner 1">
+                <img src="banner3.jpg" alt="Banner 3">
             </div>
         </div>
     </div>
-    <div class="product">
+    <div id="product">
         <div class="product_slick slick-slider">
             <div class="slick-slide">
-                <p>1</p>
+                <img src="rock1.jpg" alt="Rock 1">
             </div>
             <div class="slick-slide">
-                <p>2</p>
+                <img src="rock2.jpg" alt="Rock 2">
             </div>
             <div class="slick-slide">
-                <p>3</p>
+                <img src="rock3.jpg" alt="Rock 3">
             </div>
             <div class="slick-slide">
-                <p>4</p>
+                <img src="rock4.jpg" alt="Rock 4">
             </div>  
             <div class="slick-slide">
-                <p>5</p>
+                <img src="rock5.jpg" alt="Rock 5">
             </div>  
             <div class="slick-slide">
-                <p>6</p>
+                <img src="rock6.jpg" alt="Rock 6">
             </div>             
         </div>
     </div>
@@ -61,7 +61,7 @@
                 headerElement.innerHTML = data;
             })
             .catch(error => console.error(error));
-            var bannerSlick = $('.banner_slick').slick({
+    $('.banner_slick').slick({
     fade: true,
     infinite: true,
     speed: 1500,
@@ -71,13 +71,15 @@
     autoplaySpeed: 3000,
     arrows: false,
   });
-  var productSlick = $('.product_slick').slick({
+  $('.product_slick').slick({
     infinite: true,
-    speed: 1500,
-    slidesToShow: 1,
+    loop: true,
+    speed: 3000,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 0, // 設置為0以禁用自動播放的暫停
+    cssEase: 'linear',// 設置為線性以創建平滑的輪播效果
     arrows: false,
   });
     });
